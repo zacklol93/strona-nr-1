@@ -1,0 +1,119 @@
+/* styles.css - przenieś wszystkie reguły CSS tutaj */
+
+/* =========================
+   ZMIENNE I PODSTAWOWE STYLE
+   ========================= */
+:root{
+  --bg-top:#000; /* Kolor górnej części gradientu */
+  --bg-bottom:#f1c40f; /* Kolor dolnej części gradientu */
+  --accent:#f1c40f; /* Kolor akcentu (żółty) */
+  --card-bg:rgba(255,255,255,0.06); /* Tło kart, półprzezroczyste */
+  --text-light:#fff; /* Jasny kolor tekstu */
+  --muted:#d0d0d0; /* Kolor pomocniczy (muted) */
+  --max-width:1000px; /* Maksymalna szerokość kontenera */
+}
+
+html,body{height:100%;margin:0;padding:0;font-family:Inter,Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;} /* Reset i podstawowy font */
+
+body{
+  background: linear-gradient(to bottom, var(--bg-top) 0%, var(--bg-top) 18%, var(--bg-bottom) 100%); /* Gradient od czerni do żółtego */
+  background-repeat:no-repeat; /* Zapobiega powtarzaniu tła */
+  background-attachment:fixed; /* Przykleja tło do okna przeglądarki */
+  color:var(--text-light); /* Ustawia domyślny kolor tekstu */
+  -webkit-text-size-adjust:100%; /* Zapobiega niechcianym skalowaniom fontów na mobilkach */
+}
+
+.container{
+  max-width:var(--max-width); /* Ogranicza szerokość strony */
+  margin:clamp(12px,2.5vw,32px) auto; /* Płynne marginesy pionowe i centruje poziomo */
+  padding:clamp(12px,2.5vw,24px); /* Płynny wewnętrzny odstęp */
+  box-sizing:border-box; /* Wlicza padding do szerokości elementu */
+}
+
+/* =========================
+   TOP CARD (LOGO, NAV, WYSZUKIWARKA)
+   ========================= */
+.top-card{
+  display:flex; /* Ustawia flexbox */
+  flex-wrap:wrap; /* Pozwala zawijać elementy przy małej szerokości */
+  gap:.75rem; /* Odstęp między elementami */
+  align-items:center; /* Wyrównuje elementy pionowo do środka */
+  justify-content:space-between; /* Rozsuwa elementy na boki */
+  background:rgba(255,255,255,0.03); /* Subtelne tło paska */
+  padding:.6rem; /* Padding wewnątrz paska */
+  border-radius:10px; /* Zaokrągla rogi paska */
+  border:1px solid rgba(255,255,255,0.04); /* Delikatna ramka paska */
+}
+
+.top-left{display:flex;align-items:center;gap:.6rem;min-width:0;} /* Lewa część paska: logo i nawigacja; min-width zapobiega overflow */
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:inherit;} /* Styl linku logo */
+.brand{font-weight:700;font-size:clamp(16px,2.2vw,20px);color:var(--text-light);} /* Styl napisu marki */
+.top-nav{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;overflow:hidden;} /* Kontener linków nawigacyjnych */
+.top-nav a{color:var(--accent);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:600;font-size:clamp(13px,2vw,15px);} /* Styl pojedynczego linku */
+.top-actions{display:flex;gap:.5rem;align-items:center;margin-left:auto;} /* Prawa część paska (np. wyszukiwarka) */
+
+/* =========================
+   WYSZUKIWARKA
+   ========================= */
+.search-wrap{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  background:rgba(255,255,255,0.02);
+  padding:.3rem;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.04);
+  min-width:180px;
+  flex:1 1 220px; /* elastyczny rozmiar, ale nie za mały */
+}
+.search-input{border:0;outline:none;font-size:clamp(13px,2vw,15px);padding:.45rem;background:transparent;color:var(--text-light);flex:1;} /* Pole input wyszukiwarki */
+.search-btn{background:var(--accent);border:0;padding:.45rem .7rem;border-radius:8px;cursor:pointer;font-weight:700;color:#111;font-size:clamp(13px,2vw,15px);min-height:44px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;} /* Przycisk Szukaj */
+
+/* =========================
+   NAGŁÓWEK PROFILU (AVATAR + INFO)
+   ========================= */
+.header{display:flex;gap:1rem;align-items:center;margin-top:1rem;flex-wrap:wrap;} /* Nagłówek profilu: avatar + info */
+.avatar-wrap{flex:0 0 120px;width:120px;height:120px;border-radius:12px;overflow:hidden;background:#ddd;border:2px solid rgba(255,255,255,0.04);} /* Kontener awatara z zaokrągleniem */
+.avatar-img{width:100%;height:100%;object-fit:cover;display:block;} /* Obraz profilowy dopasowany i przycięty */
+.profile-info{flex:1;min-width:0;} /* Sekcja informacji o profilu; min-width zapobiega rozsadzeniu */
+.name{font-size:clamp(18px,3vw,24px);margin:0 0 .25rem 0;color:var(--text-light);word-break:break-word;} /* Imię i nazwisko */
+.headline{font-size:clamp(13px,2.2vw,15px);color:var(--muted);margin:0 0 .5rem 0;} /* Krótki opis zawodowy */
+.meta{font-size:13px;color:var(--muted);} /* Dodatkowe info (lokalizacja, kontakty) */
+.actions{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap;} /* Kontener przycisków akcji */
+.button{background:var(--accent);color:#111;padding:.55rem .8rem;border-radius:10px;border:none;cursor:pointer;font-weight:700;font-size:14px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;} /* Główny przycisk */
+.button.secondary{background:transparent;color:var(--accent);border:1px solid rgba(241,196,15,0.18);} /* Styl przycisku drugorzędnego */
+
+/* =========================
+   GŁÓWNA SIATKA I KARTY
+   ========================= */
+.grid{display:grid;grid-template-columns:300px 1fr;gap:1rem;margin-top:1rem;} /* Layout: sidebar + główna kolumna */
+.card{background:var(--card-bg);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.04);} /* Wygląd kart */
+.section-title{font-weight:700;margin-bottom:.5rem;color:var(--text-light);font-size:clamp(14px,2.2vw,16px);} /* Nagłówki sekcji */
+.feed-item{margin-bottom:.75rem;padding-bottom:.6rem;border-bottom:1px solid rgba(255,255,255,0.04);} /* Pojedynczy wpis w feedzie */
+
+/* NEWS */
+.news-list{display:flex;flex-direction:column;gap:.6rem;} /* Lista newsów w sidebarze */
+.news-item{display:flex;gap:.6rem;align-items:flex-start;} /* Pojedynczy element newsa */
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px;} /* Mała kropka przy newsie */
+.news-content{font-size:13px;color:var(--text-light);} /* Treść newsa */
+.news-source{font-size:12px;color:var(--muted);margin-top:4px;} /* Źródło i czas newsa */
+
+img{max-width:100%;height:auto;display:block;} /* Obrazy skalują się w kontenerze */
+
+@media (max-width:900px){ /* Media query dla tabletów i mniejszych ekranów */
+  .grid{grid-template-columns:1fr;} /* Jeden kolumnowy layout */
+  .avatar-wrap{width:96px;height:96px;flex:0 0 96px;} /* Mniejszy awatar */
+  .top-actions{width:100%;justify-content:space-between;} /* Dostosowanie prawej części top-card */
+  .search-wrap{flex-basis:100%;} /* Wyszukiwarka zajmuje cały wiersz */
+}
+
+@media (max-width:480px){ /* Media query dla małych telefonów */
+  :root{--gap:.6rem;} /* Mniejszy gap dla telefonu */
+  .avatar-wrap{width:88px;height:88px;flex:0 0 88px;} /* Jeszcze mniejszy awatar */
+  .container{margin:10px;padding:12px;} /* Mniejsze marginesy i padding na telefonie */
+  .top-nav a{font-size:13px;padding:.4rem .5rem;} /* Mniejsze linki w nawigacji */
+  .brand{font-size:16px;} /* Mniejszy rozmiar napisu marki */
+  .search-btn,.button{min-height:48px;padding:.6rem .9rem;font-size:15px;} /* Większe touch-targety na telefonie */
+}
+
+a:focus, button:focus, .search-input:focus{outline:3px solid rgba(241,196,15,0.18);outline-offset:2px;border-radius:8px;} /* Widoczny fokus dla dostępności */

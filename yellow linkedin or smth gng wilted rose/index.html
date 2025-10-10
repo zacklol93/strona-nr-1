@@ -1,0 +1,167 @@
+<!DOCTYPE html> <!-- Deklaruje dokument jako HTML5 -->
+<html lang="pl"> <!-- Ustawia język dokumentu na polski -->
+<head> <!-- Początek sekcji head -->
+  <meta charset="utf-8"> <!-- Ustawia kodowanie strony na UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!-- Ustawia viewport dla responsywności -->
+  <title>Profil — responsywne (z notatkami)</title> <!-- Tytuł strony widoczny w karcie przeglądarki -->
+
+  <!-- Podłączony zewnętrzny plik CSS -->
+  <link rel="stylesheet" href="styles.css"> <!-- Ładuje reguły z styles.css w tym samym folderze -->
+
+</head> <!-- Koniec sekcji head -->
+<body> <!-- Początek ciała dokumentu -->
+  <div class="container"> <!-- Główny kontener -->
+    <div class="top-card"> <!-- Pasek górny zawierający logo, nawigację i wyszukiwarkę -->
+      <div class="top-left"> <!-- Lewa część paska -->
+        <a class="logo" href="#" aria-label="Linkedin home"> <!-- Link opakowujący logo i napis -->
+          <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><rect x="0" y="0" width="24" height="24" rx="4" fill="#f1c40f"/><path d="M7 10h2v7H7zM8 7.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zM13.5 10c1.1 0 1.8.6 2.1 1.2V10h2v7h-2v-3.6c0-1-.5-1.7-1.5-1.7-1.1 0-1.6.8-1.6 1.7V17h-2V10h2v.1c.3-.5 1-.6 1.5-.6z" fill="#111"/></svg> <!-- SVG logo z żółtym tłem -->
+          <span class="brand">Linkedin</span> <!-- Napis obok logo -->
+        </a> <!-- Koniec linku logo -->
+        <nav class="top-nav" aria-label="Główna nawigacja"> <!-- Nawigacja główna -->
+          <a href="#" title="Home">Home</a> <!-- Link Home -->
+          <a href="#" title="Powiadomienia">Powiadomienia</a> <!-- Link Powiadomienia -->
+          <a href="#" title="Sieć">Sieć</a> <!-- Link Sieć -->
+          <a href="#" title="Praca">Praca</a> <!-- Link Praca -->
+          <a href="#" title="Wiadomości">Wiadomości</a> <!-- Link Wiadomości -->
+        </nav> <!-- Koniec nawigacji -->
+      </div> <!-- Koniec .top-left -->
+      <div class="top-actions"> <!-- Prawa część paska -->
+        <div class="search-wrap" id="searchWrap"> <!-- Wrapper wyszukiwarki z id -->
+          <input id="searchInput" class="search-input" type="search" placeholder="Szukaj postów i news" aria-label="Szukaj postów i news"> <!-- Pole wyszukiwania -->
+          <button id="searchBtn" class="search-btn" aria-label="Szukaj">Szukaj</button> <!-- Przycisk wywołujący wyszukiwanie -->
+        </div> <!-- Koniec .search-wrap -->
+      </div> <!-- Koniec .top-actions -->
+    </div> <!-- Koniec .top-card -->
+
+    <header class="header"> <!-- Nagłówek profilu -->
+      <div class="avatar-wrap"> <!-- Opakowanie awatara -->
+        <img class="avatar-img" src="jan kowalski.jpg" alt="Zdjęcie profilowe Jan Kowalski"> <!-- Lokalny plik obrazu jako awatar -->
+      </div> <!-- Koniec .avatar-wrap -->
+
+      <div class="profile-info"> <!-- Sekcja z informacjami o profilu -->
+        <h1 class="name">Jan Kowalski</h1> <!-- Imię i nazwisko -->
+        <div class="headline">Frontend Developer • HTML CSS JS</div> <!-- Krótkie podsumowanie zawodowe -->
+        <div class="meta">Gdańsk, Polska · 500+ kontaktów</div> <!-- Meta informacja o lokalizacji i kontaktach -->
+
+        <div class="actions"> <!-- Pasek akcji (przyciski) -->
+          <button class="button">Połącz</button> <!-- Przycisk Połącz -->
+          <button class="button secondary">Wiadomość</button> <!-- Przycisk Wiadomość -->
+        </div> <!-- Koniec .actions -->
+      </div> <!-- Koniec .profile-info -->
+    </header> <!-- Koniec nagłówka profilu -->
+
+    <main class="grid" role="main"> <!-- Główna sekcja strony z gridem -->
+      <aside> <!-- Lewy sidebar -->
+        <section class="card"> <!-- Karta z informacjami -->
+          <div class="section-title">Informacje</div> <!-- Tytuł sekcji Informacje -->
+          <p style="margin:0;color:var(--text-light);font-size:14px;">Pasja do tworzenia interfejsów użytkownika i optymalizacji wydajności.</p> <!-- Krótkie bio -->
+        </section> <!-- Koniec karty Informacje -->
+
+        <section class="card" style="margin-top:.75rem;"> <!-- Karta Doświadczenie -->
+          <div class="section-title">Doświadczenie</div> <!-- Tytuł sekcji Doświadczenie -->
+          <div style="color:var(--text-light);font-weight:600;">Frontend Developer</div> <!-- Rola -->
+          <div style="color:var(--muted);font-size:13px;margin-top:.25rem;">Firma XYZ · 2021–obecnie</div> <!-- Firma i okres -->
+        </section> <!-- Koniec karty Doświadczenie -->
+
+        <section class="card" style="margin-top:.75rem;"> <!-- Karta News -->
+          <div class="section-title">News</div> <!-- Tytuł sekcji News -->
+          <div id="newsList" class="news-list"> <!-- Lista newsów z id -->
+            <div class="news-item" data-text="Nowa wersja frameworka X wydana z ulepszonym renderowaniem"> <!-- Pojedynczy news z atrybutem data-text -->
+              <div class="dot" aria-hidden="true"></div> <!-- Dekoracyjna kropka -->
+              <div> <!-- Kontener treści newsa -->
+                <div class="news-content">Nowa wersja frameworka X wydana z ulepszonym renderowaniem</div> <!-- Tekst newsa -->
+                <div class="news-source">TechBlog · 2h temu</div> <!-- Źródło i czas -->
+              </div> <!-- Koniec kontenera treści -->
+            </div> <!-- Koniec news-item -->
+
+            <div class="news-item" data-text="Startup Y zebrał 5M PLN na rozwój produktu"> <!-- Drugi news -->
+              <div class="dot" aria-hidden="true"></div> <!-- Kropka -->
+              <div>
+                <div class="news-content">Startup Y zebrał 5M PLN na rozwój produktu</div> <!-- Treść -->
+                <div class="news-source">BiznesPL · 6h temu</div> <!-- Źródło -->
+              </div>
+            </div> <!-- Koniec drugiego news-item -->
+
+            <div class="news-item" data-text="Konferencja WebDev 2025 rejestracja otwarta"> <!-- Trzeci news -->
+              <div class="dot" aria-hidden="true"></div> <!-- Kropka -->
+              <div>
+                <div class="news-content">Konferencja WebDev 2025: rejestracja otwarta</div> <!-- Treść -->
+                <div class="news-source">Konferencje · 1d temu</div> <!-- Źródło -->
+              </div>
+            </div> <!-- Koniec trzeciego news-item -->
+
+          </div> <!-- Koniec #newsList -->
+        </section> <!-- Koniec karty News -->
+      </aside> <!-- Koniec sidebar -->
+
+      <section> <!-- Główna kolumna z feedem -->
+        <div class="card"> <!-- Karta pisania posta -->
+          <div class="section-title">Napisz post</div> <!-- Tytuł sekcji -->
+          <textarea id="postText" rows="3" style="width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--text-light);"></textarea> <!-- Pole tekstowe do wpisu -->
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.6rem;"> <!-- Kontener akcji pod polem -->
+            <button id="postBtn" class="button" style="padding:.6rem .9rem;">Opublikuj</button> <!-- Przycisk publikacji -->
+            <span style="color:var(--muted);font-size:13px;">Udostępnij aktualizację</span> <!-- Pomocniczy tekst -->
+          </div>
+        </div> <!-- Koniec karty pisania posta -->
+
+        <div id="feed" style="margin-top:1rem;"> <!-- Kontener feedu z postami -->
+          <div class="feed-item card" data-text="Właśnie ukończyłem nowy projekt portfolio"> <!-- Post przykładowy 1 -->
+            <div style="font-weight:700;color:var(--text-light);">Anna Nowak</div> <!-- Autor -->
+            <div style="color:#f2f2f2;margin-top:.4rem;">Właśnie ukończyłam kurs React — polecam świetne ćwiczenia praktyczne!</div> <!-- Treść -->
+          </div> <!-- Koniec posta 1 -->
+
+          <div class="feed-item card" data-text="Szukam frontend developera do projektu SaaS"> <!-- Post przykładowy 2 -->
+            <div style="font-weight:700;color:var(--text-light);">Michał Zieliński</div> <!-- Autor -->
+            <div style="color:#f2f2f2;margin-top:.4rem;">Szukam frontend developera do projektu SaaS — DM jeśli zainteresowany.</div> <!-- Treść -->
+          </div> <!-- Koniec posta 2 -->
+
+        </div> <!-- Koniec feed -->
+      </section> <!-- Koniec głównej kolumny -->
+    </main> <!-- Koniec main -->
+  </div> <!-- Koniec container -->
+
+  <script> <!-- Początek skryptu JavaScript -->
+    function addPost(text){ /* Dodaje nowy post do feedu */
+      const feed = document.getElementById('feed'); /* Pobiera kontener feed */
+      const card = document.createElement('div'); /* Tworzy element div dla posta */
+      card.className = 'feed-item card'; /* Nadaje klasy do stylowania */
+      card.setAttribute('data-text', text); /* Ustawia atrybut pomocniczy do wyszukiwania */
+      const author = document.createElement('div'); /* Tworzy element autora */
+      author.style.fontWeight = '700'; author.style.color = 'var(--text-light)'; /* Styl autora */
+      author.textContent = 'Ty'; /* Ustawia autora na "Ty" */
+      const content = document.createElement('div'); /* Tworzy element treści */
+      content.style.color = '#f2f2f2'; content.style.marginTop = '6px'; content.textContent = text; /* Styl i treść */
+      card.appendChild(author); card.appendChild(content); feed.insertBefore(card, feed.firstChild); /* Dodaje post na początek feedu */
+    }
+
+    document.getElementById('postBtn').addEventListener('click', function(){ /* Nasłuchuje kliknięcia publikacji */
+      const txt = document.getElementById('postText').value.trim(); /* Pobiera i przycina tekst */
+      if(!txt) return; /* Jeśli pusty, kończy */
+      addPost(txt); /* Dodaje post */
+      document.getElementById('postText').value = ''; /* Czyści textarea */
+    });
+
+    function performSearch(query){ /* Wyszukuje w postach i newsach */
+      const q = query.trim().toLowerCase(); /* Normalizuje zapytanie */
+      document.querySelectorAll('#feed .feed-item').forEach(p=>{ /* Iteruje po postach */
+        const text = (p.getAttribute('data-text')||'').toLowerCase(); /* Pobiera pomocniczy tekst */
+        p.style.display = (text.includes(q) || q==='') ? '' : 'none'; /* Pokazuje/ukrywa post */
+      });
+      document.querySelectorAll('#newsList .news-item').forEach(n=>{ /* Iteruje po newsach */
+        const text = (n.getAttribute('data-text')||'').toLowerCase(); /* Pobiera pomocniczy tekst */
+        n.style.display = (text.includes(q) || q==='') ? '' : 'none'; /* Pokazuje/ukrywa news */
+      });
+    }
+
+    const searchInput = document.getElementById('searchInput'); /* Pole wyszukiwania */
+    const searchBtn = document.getElementById('searchBtn'); /* Przycisk szukaj */
+    searchBtn.addEventListener('click', ()=>performSearch(searchInput.value)); /* Nasłuch kliknięcia */
+    searchInput.addEventListener('input', function(){ performSearch(this.value); }); /* Live search przy wpisywaniu */
+
+    const mq = window.matchMedia('(max-width:900px)'); /* MediaQueryList dla monitoringu */
+    function handleMQ(e){ console.log('mobile?', e.matches); } /* Loguje stan media query */
+    mq.addEventListener('change', handleMQ); /* Nasłuchuje zmian media query */
+    handleMQ(mq); /* Wywołanie startowe */
+  </script> <!-- Koniec skryptu -->
+</body> <!-- Koniec body -->
+</html> <!-- Koniec dokumentu -->
